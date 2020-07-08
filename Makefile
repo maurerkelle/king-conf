@@ -10,7 +10,7 @@ all:
 	@echo OS: $(OS)
 	@echo MACHINE: $(MACHINE)
 	@echo GPP: $(GPP)
-	@echo "Targets: gpp xsession xres"
+	@echo "Targets: gpp xsession xres i3"
 .endif
 
 
@@ -32,6 +32,16 @@ $(HOME)/.xsession: _xsession
 xres: $(HOME)/.Xresources
 $(HOME)/.Xresources: _Xresources
 	install -b _Xresources $(HOME)/.Xresources
+
+
+
+# i3 ============================================================================
+i3: $(HOME)/.config/i3/config
+$(HOME)/.config/i3/config: _i3_config.out
+	install -b _i3_config.out $(HOME)/.config/i3/config
+_i3_config.out: _i3_config.in gpp
+	$(GPP) _i3_config.in -o _i3_config.out
+
 
 
 # # fvwm =========================================================================

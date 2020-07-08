@@ -10,7 +10,7 @@ all:
 	@echo OS: $(OS)
 	@echo MACHINE: $(MACHINE)
 	@echo GPP: $(GPP)
-	@echo "Targets: gpp xsession xres i3"
+	@echo "Targets: gpp xsession xres i3 emacs"
 .endif
 
 
@@ -50,10 +50,10 @@ _i3_config.out: _i3_config.in gpp
 # 	install -b _fvwmrc $(HOME)/.fvwm/config
 
 
-# # EMACS ========================================================================
-# emacs: $(HOME)/.emacs.d/init.el
-# $(HOME)/.emacs.d/init.el: _emacs.d/init.el
-# 	install -b _emacs.d/init.el $(HOME)/.emacs.d/init.el
+# EMACS ========================================================================
+emacs: $(HOME)/.emacs.d/init.el
+$(HOME)/.emacs.d/init.el: _emacs.d/init.el
+	install -b _emacs.d/init.el $(HOME)/.emacs.d/init.el
 
 
 # # BASHRC =======================================================================

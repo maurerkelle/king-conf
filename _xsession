@@ -1,0 +1,14 @@
+#/bin/sh
+
+xrandr --output DP-2-2 --mode 3440x1440 --output eDP-1 --mode 1600x900 --rate 60.01 --right-of DP-2-2
+
+# turn off the fucking beep
+xset -b b 0
+
+compton -b
+
+xrdb $HOME/.Xresources
+
+nitrogen --restore
+
+i3

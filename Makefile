@@ -70,13 +70,6 @@ $(HOME)/.profile: _profile
 	install -b _profile $(HOME)/.profile
 
 
-# # TESTCNF ======================================================================
-# testcnf: $(HOME)/.testcnf gpp
-# _testcnf.out: _testcnf.in
-# 	$(GPP) _testcnf.in -o $@
-# $(HOME)/.testcnf: _testcnf.out
-# 	install -b _testcnf.out $@
-
 
 # # bckpit =======================================================================
 # bckpit: $(HOME)/bin/bckpit

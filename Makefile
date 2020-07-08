@@ -6,8 +6,18 @@ GPP	= ./gpp -DOS=$(OS) -DMACHINE=$(MACHINE)
 
 all:
 .if ($(OS) == "OPENBSD")
-	@echo "Targets: xsession"
+# TODO: make this a phony "help" target and all means all
+	@echo OS: $(OS)
+	@echo MACHINE: $(MACHINE)
+	@echo GPP: $(GPP)
+	@echo "Targets: gpp xsession xres"
 .endif
+
+
+
+# GPP PREPROCESSOR =============================================================
+gpp: gpp.c
+	$(CC) -o gpp $< 
 
 
 # Session Files ================================================================
@@ -18,15 +28,10 @@ $(HOME)/.xsession: _xsession
 .endif
 
 
-# xinitrc: $(HOME)/.xinitrc $(HOME)/.Xresources
-# $(HOME)/.xinitrc: _xinitrc
-# 	install -b _xinitrc $(HOME)/.xinitrc
-
-
-# # Xresources ===================================================================
-# xres: $(HOME)/.Xresources
-# $(HOME)/.Xresources: _Xresources
-# 	install -b _Xresources $(HOME)/.Xresources
+# Xresources ===================================================================
+xres: $(HOME)/.Xresources
+$(HOME)/.Xresources: _Xresources
+	install -b _Xresources $(HOME)/.Xresources
 
 
 # # fvwm =========================================================================
@@ -39,11 +44,6 @@ $(HOME)/.xsession: _xsession
 # emacs: $(HOME)/.emacs.d/init.el
 # $(HOME)/.emacs.d/init.el: _emacs.d/init.el
 # 	install -b _emacs.d/init.el $(HOME)/.emacs.d/init.el
-
-
-# # GPP ==========================================================================
-# gpp: gpp.c
-# 	$(CC) -o gpp $< 
 
 
 # # BASHRC =======================================================================

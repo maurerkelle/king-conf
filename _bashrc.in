@@ -1,0 +1,15 @@
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s checkwinsize
+shopt -s globstar
+
+PS1='[\\u@\\h:\\w]\\n\\$ '
+
+alias ls='colorls -GF' 
+
+
+export EDITOR=/usr/bin/mg
+
+# screenfetch

@@ -10,7 +10,7 @@ all:
 	@echo OS: $(OS)
 	@echo MACHINE: $(MACHINE)
 	@echo GPP: $(GPP)
-	@echo "Targets: gpp xsession xres i3 emacs"
+	@echo "Targets: gpp xsession xres i3 emacs bashrc profile"
 .endif
 
 
@@ -56,12 +56,18 @@ $(HOME)/.emacs.d/init.el: _emacs.d/init.el
 	install -b _emacs.d/init.el $(HOME)/.emacs.d/init.el
 
 
-# # BASHRC =======================================================================
-# bashrc: $(HOME)/.bashrc gpp
-# _bashrc.out: _bashrc.in
-# 	$(GPP) _bashrc.in -o $@
-# $(HOME)/.bashrc: _bashrc.out
-# 	install -b _bashrc.out $(HOME)/.bashrc
+# BASHRC =======================================================================
+bashrc: $(HOME)/.bashrc gpp
+_bashrc.out: _bashrc.in
+	$(GPP) _bashrc.in -o $@
+$(HOME)/.bashrc: _bashrc.out
+	install -b _bashrc.out $(HOME)/.bashrc
+
+
+# PROFILE =======================================================================
+profile: $(HOME)/.profile
+$(HOME)/.profile: _profile
+	install -b _profile $(HOME)/.profile
 
 
 # # TESTCNF ======================================================================

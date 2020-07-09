@@ -340,7 +340,7 @@ it will ask first)."
 (ensure-installed 'deft)
 
 (setq deft-extensions '("org"))
-(setq deft-directory "~/Sync/notes")
+(setq deft-directory "~/dev/notes")
 (setq deft-recursive t)
 (global-set-key [f8] 'deft)
 

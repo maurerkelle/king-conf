@@ -23,5 +23,5 @@ remoteuser = <USER>
 remotepassfile = <PWFILE>
 auth_mechanism = LOGIN
 sslcacertfile = /etc/ssl/cert.pem  
-
+folderfilter = lambda folder: folder in ['INBOX']
 

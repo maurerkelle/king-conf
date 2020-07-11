@@ -9,6 +9,9 @@ compton -b
 
 xrdb $HOME/.Xresources
 
+# intl us with deadkeys
+setxkbmap -layout us -variant intl
+
 nitrogen --restore
 
 # getting mail

@@ -3,4 +3,8 @@
 SOURCE=/home/sk/
 TARGET=/net/homes/sk/puck_copy
 
-rsync -avz --delete $SOURCE $TARGET
+rsync -avz \
+      --exclude '.cache' \
+      --exclude '.mu' \
+      --exclude '.pw.engineer' \
+      --delete $SOURCE $TARGET

@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
 SOURCE=/home/sk/
-TARGET=/nfs/homes/sk/pitfall_copy
+TARGET=/net/homes/sk/puck_copy
 
 rsync -avz --delete $SOURCE $TARGET

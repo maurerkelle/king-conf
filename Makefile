@@ -70,12 +70,11 @@ $(HOME)/.profile: _profile
 	install -b _profile $(HOME)/.profile
 
 
-# # bckpit =======================================================================
-# bckpit: $(HOME)/bin/bckpit
-
-# $(HOME)/bin/backpit: bckpit.sh
-# 	install -b bckpit.sh $@
-# 	chmod +x $@
+# bckpit =======================================================================
+bckbee: $(HOME)/bin/bckbee
+$(HOME)/bin/bckbee: bckbee.sh
+	install -b bckbee.sh $@
+	chmod +x $@
 
 # CLEAN +=======================================================================
 

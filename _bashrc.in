@@ -9,6 +9,7 @@ PS1='[\\u@\\h:\\w]\\n\\$ '
 
 alias ls='colorls -GF' 
 
+export PATH=$HOME/bin:$PATH
 
 export EDITOR=/usr/bin/mg
 

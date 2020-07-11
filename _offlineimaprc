@@ -1,0 +1,27 @@
+[general]
+accounts = account1
+
+
+[Account account1]
+localrepository = LocalAccount1
+remoterepository = RepositoryAccount1
+autorefresh = 5
+quick = 10
+postsynchook = mu index --maildir ~/mail
+
+
+[Repository LocalAccount1]
+type = Maildir
+localfolders = ~/mail/<ACCOUNTNAME>
+
+
+[Repository RepositoryAccount1]
+type = IMAP
+remotehost = <HOST>
+maxconnections = 2
+remoteuser = <USER>
+remotepassfile = <PWFILE>
+auth_mechanism = LOGIN
+sslcacertfile = /etc/ssl/cert.pem  
+
+

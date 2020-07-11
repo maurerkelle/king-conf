@@ -11,4 +11,7 @@ xrdb $HOME/.Xresources
 
 nitrogen --restore
 
+# getting mail
+offlineimap &
+
 i3

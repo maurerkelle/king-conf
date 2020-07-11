@@ -1,0 +1,13 @@
+rp|remote line printer:\
+	:lp=:rm=192.168.178.68:\
+	:rp=lp:\
+	:sd=/var/spool/output/lpd:\
+	:lf=/var/log/lpd-errs:
+
+
+# lp|Lj4L|HP Lj4L:\
+#         :lp=/dev/lpt0:\
+#         :af=/etc/foomatic/HP-LaserJet_4L-ljet4.ppd:\
+#         :if=/usr/local/bin/foomatic-rip:\
+#         :sh:sd=/var/spool/output:\
+#         :lf=/var/log/lpd-errs:
